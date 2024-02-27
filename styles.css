@@ -1,0 +1,50 @@
+p{
+    color:rgb(0, 0, 0);
+}
+.goodbye{
+    color:blue;
+}
+.bigText{
+    font-size: 2em;
+}
+.spaceBetween{
+    display: flex;
+    justify-content: flex-end;
+}
+.flex{
+    display: flex
+}
+.row{
+    display: table-row
+}
+.column{
+    display: table-column
+}
+
+img{
+    width: 300px;
+
+}
+.list{
+    font-size: 16px;
+}
+.table{
+    width: 100%;
+    
+}
+.table td{
+    text-align: center;
+}
+.table td:first-child{
+    text-align: left;
+}
+.table tr:first-child{
+    border-bottom: 5px solid black;
+}
+.tr{
+    border-bottom: 10px solid black;
+    width: fit-content;
+}
+.grad {
+    background-image: linear-gradient(rgb(216, 200, 200), rgb(147, 147, 147));
+  }
