@@ -66,7 +66,7 @@ textarea{
 td{
   margin: 10px 10px 0 0;
 }
-.styled {
+.styled-left {
   border: 1px solid dodgerblue;
   padding: 10px;
   font-size: 1rem;
@@ -75,15 +75,22 @@ td{
   color: dodgerblue;
   border-radius: 36px;
   background-color: white;
+  transition: 0.5s;
 }
-
-.styled:hover {
-  background-color: rgba(255, 0, 0, 1);
+.styled-left:hover {
+  background-color: lightgray;
 }
-
-.styled:active {
-  box-shadow:
-    inset -2px -2px 3px rgba(255, 255, 255, 0.6),
-    inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+.styled-right {
+  border: 1px solid dodgerblue;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  border-radius: 36px;
+  background-color: dodgerblue;
+  transition: 0.5s;
 }
-
+.styled-right:hover {
+  background-color: rgb(133, 19, 135);
+}
