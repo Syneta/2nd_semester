@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./output.css" />
+  </head>
+
+  <body class="p-40">
+    <div>
+      <p id="number">number place</p>
+      <button class="border" onclick="onIncrementClick()">Button</button>
+      <button class="border" onclick="onDecrementClick()">Button</button>
+    </div>
+    <div class="mt-4 border">
+      <button class="border" onclick="saveToLocalStorage()">save</button>
+      <button class="border" onclick="getItemFromLocalStorage()">load</button>
+    </div>
+    <div>
+      <div class="flex border">
+        <p>Input value:</p>
+        <p id="input-value">10</p>
+      </div>
+      <input class="border" id="input" />
+    </div>
+    <div class="border">
+      <p>Random person:</p>
+      <p id="random-person">No random person selected</p>
+    </div>
+    <button class="border" id="select-random-person-button">
+      Select random person
+    </button>
+    <script src="scripts.js"></script>
+  </body>
+</html>
