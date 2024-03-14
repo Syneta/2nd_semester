@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="./output.css" />
+</head>
+
+<body class="flex flex-col justify-around p-40 content-center w-2/3 border">
+  <div class ="gap-5 flex flex-col">
+    <p class="flex justify-center text-4xl">Set conditions</p>
+    <label for="input">Trigger conditions</label>
+    <input type="number" class="border" id="input" min="0" max="50"/>
+    <label for="increment">+ - increments</label>
+    <input type="number" class="border" id="increment" min="1" max="10"/>
+  </div>
+        <p class="text-8xl font-extrabold pb-5 border flex justify-center" id="numberTag">0</p>
+        <div class="flex border justify-around">
+          <button class="bg-green-500 text-8xl justify-center align-middle w-20" onclick="onIncrementClick()">+</button>
+          <button class="bg-red-500 text-8xl justify-center align-middle w-20" onclick="onDecrementClick()">-</button>
+        </div>
+    
+        <p id="text" class="bg-purple-900 text-white font-bold text text-7xl w-min"></p>
+
+  <div class="mt-4 border">
+    <button class="border" onclick="saveToLocalStorage()">save</button>
+    <button class="border" onclick="getItemFromLocalStorage()">load</button>
+  </div>
+  <div>
+    <div class="flex border">
+      <p>Input value:</p>
+      <p id="input-value">10</p>
+      <p>Increment value:</p>
+      <p id="increment-value"></p>
+    </div>
+  </div>
+  <script src="scripts-copy.js"></script>
+</body>
+
+</html>
