@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="./output.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+</head>
+<title>
+  Hungry Llama
+</title>
+<nav class="font-bold h-1/5 bg-orange-200 flex flex-row">
+  <div class="flex justify-start gap-2 items-center border h-full w-full">
+    <img src="./provided/hungry llama.png" alt="Logo pic" class="rounded-full w-20">
+    <a href='landing-page.html'>Home</a>
+    <a href='menu.html'>Menu</a>
+    <a href='contact.html'>Contact us</a>
+    <a href='about-us.html'>About us</a>
+  </div>
+</nav>
+
+<body class="flex w-full flex-col p-1 bg-yellow-50">
+  <div class="flex flex-col justify-center w-full">
+    <div class="p-6">
+      <h2 class="text-slate-500 font-semibold text-xl justify-center flex font-serif">
+        Where Good Food Meets Great Company </br>- The Hungry Llama
+      </h2>
+      <div class="flex flex-col justify-center w-full">
+        <h3 class="p-5 text-xl font-semibold">Get in touch with us</h3>
+          <form action="get" class="flex flex-col gap-2">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" required>
+            <label for="email">E-mail</label>
+            <input type="text" name="email" id="email" required>
+            <label for="select">Select topic</label>
+            <select name="select" id="select" required class="w-min">
+              <option value="general">General Request</option>
+              <option value="restaurant">Restaurant</option>
+              <option value="office">Office</option>
+              <option value="feedback">Feedback</option>
+              <option value="party">Party Service</option>
+            </select>
+            </br>
+            <textarea name="message" id="message" cols="30" rows="10"></textarea>
+            <button type="submit" name="submit" value="submit"
+              class="border-slate-500 border-2 w-min px-3 rounded-full text-xl text-slate-500">Submit</button>
+          </form>
+      </div>
+    </div>
+  </div>
+</body>
+<footer>
+  <div class="w-full flex flex-col md:flex-row md:gap-6 justify-start align-bottom h-min bg-orange-200">
+    <p>The Hungry Llama</p>
+    <p>1404 Food road</p>
+    <p>555-3212</p>
+    <p>frontdesk@hungryllama.com</p>
+  </div>
+</footer>
+
+</html>

@@ -599,8 +599,12 @@ video {
   height: min-content;
 }
 
-.w-11\/12 {
-  width: 91.666667%;
+.w-1\/2 {
+  width: 50%;
+}
+
+.w-11 {
+  width: 2.75rem;
 }
 
 .w-20 {
@@ -611,24 +615,9 @@ video {
   width: 100%;
 }
 
-.w-5 {
-  width: 1.25rem;
-}
-
-.w-10 {
-  width: 2.5rem;
-}
-
-.w-11 {
-  width: 2.75rem;
-}
-
-.w-9 {
-  width: 2.25rem;
-}
-
-.w-12 {
-  width: 3rem;
+.w-min {
+  width: -moz-min-content;
+  width: min-content;
 }
 
 .flex-row {
@@ -643,8 +632,12 @@ video {
   flex-wrap: wrap;
 }
 
-.items-start {
-  align-items: flex-start;
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
+.place-items-center {
+  place-items: center;
 }
 
 .items-center {
@@ -655,16 +648,20 @@ video {
   justify-content: flex-start;
 }
 
+.justify-end {
+  justify-content: flex-end;
+}
+
 .justify-center {
   justify-content: center;
 }
 
-.justify-around {
-  justify-content: space-around;
-}
-
 .gap-2 {
   gap: 0.5rem;
+}
+
+.text-nowrap {
+  text-wrap: nowrap;
 }
 
 .rounded-full {
@@ -675,14 +672,28 @@ video {
   border-width: 1px;
 }
 
+.border-2 {
+  border-width: 2px;
+}
+
+.border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
+}
+
+.border-slate-600 {
+  --tw-border-opacity: 1;
+  border-color: rgb(71 85 105 / var(--tw-border-opacity));
+}
+
+.border-slate-500 {
+  --tw-border-opacity: 1;
+  border-color: rgb(100 116 139 / var(--tw-border-opacity));
+}
+
 .bg-orange-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(254 215 170 / var(--tw-bg-opacity));
-}
-
-.bg-yellow-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(254 249 195 / var(--tw-bg-opacity));
 }
 
 .bg-yellow-50 {
@@ -694,12 +705,45 @@ video {
   padding: 0.25rem;
 }
 
+.p-5 {
+  padding: 1.25rem;
+}
+
 .p-6 {
   padding: 1.5rem;
 }
 
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.pb-2 {
+  padding-bottom: 0.5rem;
+}
+
+.pl-1 {
+  padding-left: 0.25rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.align-top {
+  vertical-align: top;
+}
+
 .align-bottom {
   vertical-align: bottom;
+}
+
+.font-serif {
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
 .text-3xl {
@@ -712,6 +756,16 @@ video {
   line-height: 1.75rem;
 }
 
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -720,9 +774,9 @@ video {
   font-weight: 600;
 }
 
-.text-white {
+.text-slate-500 {
   --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+  color: rgb(100 116 139 / var(--tw-text-opacity));
 }
 
 * {
@@ -730,65 +784,80 @@ video {
 }
 
 tr{
-  border: 2px solid chocolate;
+  border: 2px solid rgba(210, 105, 30, 0.5);
 }
 
 td{
-  border: 2px solid chocolate;
+  border: 2px solid rgba(210, 105, 30, 0.5);
+  padding: 5px;
 }
 
 th{
-  border: 2px solid chocolate;
+  border: 2px solid rgba(210, 105, 30, 0.5);
+  color: rgb(100, 116, 139);
 }
 
-.wrapper {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  grid-auto-rows: minmax(100px, auto);
-  border: none;
-  background-color: transparent;
+a{
+  color: rgb(100, 116, 139)
 }
 
-.one {
-  background-color: red;
-  opacity: 0.5;
-  grid-column: 1/4;
-  grid-row: 2/4;
+h2{
+  padding: 1rem;
+  font-weight: bold;
+  color: rgb(100, 116, 139);
 }
 
-.two {
-  background-color: rgba(200, 100, 0, 0.5);
-  grid-column: 2 / 4;
-  grid-row: 1 / 3;
+h3{
+  color: rgb(100, 116, 139);
 }
 
-.three {
-  background-color: rgba(200, 100, 0, 0.5);
-  grid-column: 1;
-  grid-row: 2 / 5;
-}
-
-.four {
-  background-color: rgba(200, 100, 0, 0.5);
-  grid-column: 3;
-  grid-row: 3;
-}
-
-.five {
-  background-color: rgba(200, 100, 0, 0.5);
-  grid-column: 2;
-  grid-row: 4;
-}
-
-.six {
-  background-color: rgba(200, 100, 0, 0.5);
-  grid-column: 3;
-  grid-row: 4;
+p{
+  color: rgb(100, 116, 139);
 }
 
 @media (min-width: 768px) {
   .md\:flex {
     display: flex;
+  }
+
+  .md\:min-w-\[400px\] {
+    min-width: 400px;
+  }
+
+  .md\:max-w-\[600px\] {
+    max-width: 600px;
+  }
+
+  .md\:max-w-\[700px\] {
+    max-width: 700px;
+  }
+
+  .md\:max-w-\[650px\] {
+    max-width: 650px;
+  }
+
+  .md\:flex-row {
+    flex-direction: row;
+  }
+
+  .md\:flex-col {
+    flex-direction: column;
+  }
+
+  .md\:items-center {
+    align-items: center;
+  }
+
+  .md\:justify-center {
+    justify-content: center;
+  }
+
+  .md\:gap-6 {
+    gap: 1.5rem;
+  }
+
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
