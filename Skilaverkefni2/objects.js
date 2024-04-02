@@ -23,9 +23,7 @@ myFunction({x:'a',b:'b',z:undefined},'z') Expected false
 // Write a function that takes an object with two properties as argument
 // It should return the value of the property with key country
 const getCountry = (obj) => {
-  continent: 
-  country: 
-  return getCountry.country;
+  return obj.country;
 };
 console.log(getCountry({ continent: 'Asia', country: 'Japan' }))
 
@@ -41,8 +39,9 @@ myFunction({ country: 'Sweden', continent: 'Europe' }) Expected 'Sweden'
 // It should return the value of the property with key 'prop-2'
 // Tip: you might want to use the square brackets to access the property
 const getWeirdKeyValue = (obj) => {
-  return;
+  return obj['prop-2'];
 };
+console.log(getWeirdKeyValue({  one: 1,  'prop-2': 2}))
 
 /*
 Test cases:
@@ -55,9 +54,10 @@ myFunction({  'prop-2': 'two',  prop: 'test'}) Expected 'two'
 // Write a function that takes an object with two properties and a string as arguments
 // It should return the value of the property with key equal to the value of the string
 const getPropertyByString = (obj, key) => {
-  return;
-};
 
+  return obj[key];
+};
+console.log(getPropertyByString({  country: 'Iceland',  continent: 'Europe'}, 'country'))
 /*
 Test cases:
 myFunction({  continent: 'Asia',  country: 'Japan'}, 'continent') Expected 'Asia'
@@ -71,8 +71,14 @@ myFunction({  country: 'Sweden',  continent: 'Europe'}, 'country') Expected 'Swe
 // Return false otherwise
 // NOTE: Test case 3 is a bit tricky because the value of property 'z' is undefined, but the property itself exists
 const checkIfPropertyExists = (a, b) => {
-  return;
+  if(b in a){
+    if(a[b] !== null || a[b] !== undefined){
+      return true
+    }
+  }
+  return false;
 };
+console.log(checkIfPropertyExists({x:'a',y:'b',z:'c'},'a'))
 
 /*
 Test cases:
@@ -87,8 +93,11 @@ myFunction({x:'a',y:'b',z:undefined},'z') Expected true
 // Create an object that has a property with key 'key' and a value equal to the string
 // Return the object
 const createObjectWithKeyValue = (a) => {
-  return;
+  const obj = {}
+  obj['key'] = a
+  return obj
 };
+console.log(createObjectWithKeyValue('2331'))
 
 /*
 Test cases:
@@ -103,9 +112,11 @@ myFunction('b') Expected {key:'b'}
 // Create an object that has a property with key 'a' and a value of 'b'
 // Return the object
 const createObjectWithKeyAndValue = (a, b) => {
-  return;
+  obj = {}
+  obj[a] = b
+  return obj;
 };
-
+console.log(createObjectWithKeyAndValue('Sigur','jón'))
 /*
 Test cases:
 myFunction('a','b') Expected {a:'b'}
@@ -119,8 +130,13 @@ myFunction('b','w') Expected {b:'w'}
 // Create an object that has properties with keys 'a' and corresponding values 'b'
 // Return the object
 const createObjectFromArrays = (a, b) => {
-  return;
+  const obj = {};
+  for (let i = 0; i < a.length; i++) {
+      obj[a[i]] = b[i];
+  }
+  return obj;
 };
+console.log(createObjectFromArrays([1,'b'],['a',2]))
 
 /*
 Test cases:
@@ -134,8 +150,10 @@ myFunction([1,'b'],['a',2]) Expected {1:'a',b:2}
 // Return an array with all object keys
 // Tip: Object.keys()
 const extractKeysFromObject = (a) => {
-  return;
+  const keys = Object.keys(a)
+  return keys
 };
+console.log(extractKeysFromObject({j:9,i:2,x:3,z:4}))
 
 /*
 Test cases:
@@ -150,8 +168,13 @@ myFunction({w:15,x:22,y:13}) Expected ['w','x','y']
 // Return the property 'b' of object 'a' inside the original object if it exists
 // If not, return undefined
 const getNestedProperty = (obj) => {
-  return;
+  if ('a' in obj && 'b' in obj.a) {
+    return obj.a.b;
+  } else {
+    return undefined;
+  }
 };
+console.log(getNestedProperty({b:{a:1}}));
 
 /*
 Test cases:
@@ -166,8 +189,14 @@ myFunction({a:{b:2}}) Expected 2
 // Return the sum of all object values
 // Tip: Object.values()
 const calcSumOfAllObjectValues = (a) => {
-  return;
+  let value = Object.values(a)
+  let sum = 0
+  for(let v of value){
+    sum += v
+  }
+  return sum;
 };
+console.log(calcSumOfAllObjectValues({j:88,i:2,x:3,z:4}))
 /*
 Test cases:
 myFunction({a:1,b:2,c:3}) Expected 6
@@ -181,8 +210,10 @@ myFunction({w:15,x:22,y:13}) Expected 50
 // except for the property with key 'b'
 // Tip: Spread syntax
 const removePropertyB = (obj) => {
-  return;
+  const { b, ...removedResult } = obj;
+  return removedResult;
 };
+console.log(removePropertyB({ e: 6, f: 4, b: 5, a: 3 }))
 
 /*
 Test cases:
@@ -201,8 +232,13 @@ myFunction({ e: 6, f: 4, b: 5, a: 3 }) Expected { e: 6, f: 4, a: 3 }
 // It should have the properties 'a', 'b', 'c', 'd', and 'e'
 // Tip: Spread syntax
 const mergeAndFixObjects = (x, y) => {
-  return;
+  const merger = {...x, ...y}
+  if('b' in merger){
+   merger['d'] = merger['b']
+  }
+  return merger;
 };
+console.log(mergeAndFixObjects({ a: 5, b: 4 }, { c: 3, b: 1, e: 2 }))
 /*
 Test cases:
 myFunction({ a: 1, b: 2 }, { c: 3, b: 4, e: 5 }) Expected { a: 1, b: 2, c: 3, e: 5, d: 4}
@@ -215,8 +251,14 @@ myFunction({ a: 5, b: 4 }, { c: 3, b: 1, e: 2 }) Expected { a: 5, b: 4, c: 3, e:
 // Multiply all values of 'a' by 'b'
 // Return the resulting object
 const multipyAllValuesByB = (a, b) => {
-  return;
+  let value = {}
+  for(num in a){
+    value[num] = a[num]*b
+  }
+  
+  return value;
 };
+console.log(multipyAllValuesByB({w:15,x:22,y:13},6))
 
 /*
 Test cases:
