@@ -43,8 +43,8 @@ const ExpenseAPI = () => {
         <strong className='py-4 flex'>Hello my beautiful expenses list</strong>
         <ul>
           {expense.map(exp => (
-            <li key={exp.id} className='border-b-2 border-black text-nowrap'>
-              {exp.name} - {exp.cost} kr.
+            <li key={exp.id} className='flex items-center border-2 border-black w-24 h-24 p-2 '>
+              {exp.name} ISK: {exp.cost}
             </li>
           ))}
         </ul>
