@@ -65,6 +65,9 @@ export default () => {
           onRemoveReview={() => handleRemoveReview(index)}
         />
       ))}
+
+      <button onClick={() => setShowReview(!showReview)}>Toggle Remove Button</button>
+
       <div className="p-3">
         <button
           className="font-bold text-nowrap w-min bg-gray-200 "
